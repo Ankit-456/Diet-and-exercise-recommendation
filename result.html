@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diet and Workouts Recommendations</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body style="background:black;color:white">
+    <div class="container mycont mt-5" style="background:white;color:black;border-radius:15px; padding:10px;">
+        <h1 class="text-center">Diet and Workouts Recommendations</h1>
+
+        {% if recommendations %}
+        <div class="container mt-5" style="background:white;color:black;border-radius:15px; padding:10px;">
+            <h3>Your BMI:</h3>
+            <p>Your calculated BMI is {{ bmi }}.</p> <!-- Display BMI -->
+
+
+
+            <h3>Recommended Breakfasts:</h3>
+            <ul>
+                {% for breakfast in recommendations.breakfasts %}
+                <li>{{ breakfast }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Recommended Lunches:</h3>
+            <ul>
+                {% for lunch in recommendations.lunches %}
+                <li>{{ lunch }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Recommended Dinners:</h3>
+            <ul>
+                {% for dinner in recommendations.dinners %}
+                <li>{{ dinner }}</li>
+                {% endfor %}
+            </ul>
+
+            <h3>Recommended Workouts:</h3>
+            <ul>
+                {% for workout in recommendations.workouts %}
+                <li>{{ workout }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Back to Form</a>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
